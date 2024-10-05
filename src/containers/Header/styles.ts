@@ -2,8 +2,7 @@ import styled from 'styled-components'
 import variables from '../../styles/variables'
 
 export const HeaderStyle = styled.header`
-  background-color: rgb(${variables.bgHeaderColor});
-  padding: 16px 16px 0 16px;
+  margin-bottom: 32px;
 `
 
 export const Titulo = styled.h1`
