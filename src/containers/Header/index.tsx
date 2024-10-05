@@ -1,21 +1,23 @@
 import Tab from '../../components/Tab'
-import { BuscarInput, CampoBusca, Tabs, Titulo } from './styles'
+import { BuscarInput, CampoBusca, HeaderStyle, Tabs, Titulo } from './styles'
 
 const Header = () => (
   <>
-    <Titulo>📇 lista de contatos</Titulo>
-    <CampoBusca>
-      <BuscarInput type="text" name="" id="" placeholder="pesquisar" />
-      <i className="bi bi-search"></i>
-    </CampoBusca>
+    <HeaderStyle>
+      <Titulo>📇 lista de contatos</Titulo>
+      <CampoBusca>
+        <BuscarInput type="text" name="" id="" placeholder="pesquisar" />
+        <i className="bi bi-search"></i>
+      </CampoBusca>
 
-    <Tabs>
-      <Tab label={'star'} fav={true}></Tab>
-      <Tab label={'todos'}></Tab>
-      <Tab label={'familia'}></Tab>
-      <Tab label={'amigos'}></Tab>
-      <Tab label={'trabalho'}></Tab>
-    </Tabs>
+      <Tabs>
+        <Tab label={'star'} fav={true} ativo={false}></Tab>
+        <Tab label={'todos'} ativo={true}></Tab>
+        <Tab label={'familia'} ativo={false}></Tab>
+        <Tab label={'amigos'} ativo={false}></Tab>
+        <Tab label={'trabalho'} ativo={false}></Tab>
+      </Tabs>
+    </HeaderStyle>
   </>
 )
 

@@ -3,6 +3,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import Header from './containers/Header'
 
 import GlobalStyle, { Container } from './styles'
+import ContactList from './containers/ContactList'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <GlobalStyle />
       <Container>
         <Header />
+        <ContactList></ContactList>
       </Container>
     </>
   )
