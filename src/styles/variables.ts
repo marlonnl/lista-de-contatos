@@ -13,5 +13,10 @@ export default {
   favTrue: '255,205,60',
   favFalse: '173,174,177',
 
-  buttonBgColor: '61,92,149'
+  buttonBgColor: '61,92,149',
+
+  editIcon: '66, 165, 245',
+  cancelIcon: '255, 152, 0',
+  saveIcon: '76, 175, 80',
+  deleteIcon: '239, 83, 80'
 }

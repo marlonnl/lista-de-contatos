@@ -1,13 +1,16 @@
 import { BootstrapIcon, Favorito } from '../../styles'
 import * as enums from '../../utils/enums/contatos'
 import {
+  ContactActions,
   ContactCard,
   ContactCategoria,
   ContactEmail,
   ContactHeader,
-  ContactIcons,
+  ContactInfo,
   ContactName,
-  ContactTelefone
+  ContactTelefone,
+  Icon,
+  Icons
 } from './styles'
 
 type Props = {
@@ -21,24 +24,33 @@ type Props = {
 const Contact = ({ nome, email, tel, categoria, fav }: Props) => {
   return (
     <ContactCard>
-      <ContactHeader>
-        <ContactName>
-          <BootstrapIcon>&#xF4D7;</BootstrapIcon>
-          {nome}
-        </ContactName>
-        <ContactIcons>
+      <ContactInfo>
+        <ContactHeader>
+          <ContactName>
+            <BootstrapIcon>&#xF4D7;</BootstrapIcon>
+            {nome}
+          </ContactName>
           <ContactCategoria>{categoria}</ContactCategoria>
-          <Favorito fav={fav}>{fav ? <>&#xF586;</> : <>&#xF588;</>}</Favorito>
-        </ContactIcons>
-      </ContactHeader>
-      <ContactEmail>
-        <BootstrapIcon>&#xF84C;</BootstrapIcon>
-        {email}
-      </ContactEmail>
-      <ContactTelefone>
-        <BootstrapIcon>&#xF5C1;</BootstrapIcon>
-        {tel}
-      </ContactTelefone>
+        </ContactHeader>
+        <ContactEmail>
+          <BootstrapIcon>&#xF84C;</BootstrapIcon>
+          {email}
+        </ContactEmail>
+        <ContactTelefone>
+          <BootstrapIcon>&#xF5C1;</BootstrapIcon>
+          {tel}
+        </ContactTelefone>
+      </ContactInfo>
+
+      <ContactActions>
+        <Favorito fav={fav}>{fav ? <>&#xF586;</> : <>&#xF588;</>}</Favorito>
+        <Icons>
+          <Icon tipo={'editar'}>&#xF4CA;</Icon>
+          <Icon tipo={'deletar'}>&#xF5DD;</Icon>
+          {/* <Icon tipo={'cancelar'}>&#xF622;</Icon>
+          <Icon tipo={'salvar'}>&#xF7D9;</Icon> */}
+        </Icons>
+      </ContactActions>
     </ContactCard>
   )
 }

@@ -1,17 +1,31 @@
 import styled from 'styled-components'
 import variables from '../../styles/variables'
 
+type Props = {
+  tipo: 'editar' | 'deletar' | 'cancelar' | 'salvar' | string
+}
+
 export const ContactCard = styled.div`
   padding: 16px;
   border: 1px solid transparent;
   border-radius: 8px;
   margin-bottom: 16px;
 
+  display: flex;
+  justify-content: space-between;
+
   box-shadow: 5px 5px 5px rgb(${variables.secondaryText});
 
   &:hover {
     box-shadow: 5px 5px 5px 1px rgb(${variables.secondaryText});
   }
+`
+
+export const ContactInfo = styled.div`
+  width: 96%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 `
 
 export const ContactName = styled.h3`
@@ -48,11 +62,6 @@ export const ContactHeader = styled.div`
   justify-content: space-between;
 `
 
-export const ContactIcons = styled.div`
-  display: flex;
-  gap: 16px;
-`
-
 export const ContactCategoria = styled.span`
   font-size: 12px;
   background-color: rgb(${variables.tabHover});
@@ -64,5 +73,41 @@ export const ContactCategoria = styled.span`
 
   &::before {
     content: '#';
+  }
+`
+
+export const ContactActions = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 4px;
+`
+
+function iconColor(tipo: string) {
+  switch (tipo) {
+    case 'editar':
+      return variables.editIcon
+    case 'salvar':
+      return variables.saveIcon
+    case 'deletar':
+      return variables.deleteIcon
+    case 'cancelar':
+      return variables.cancelIcon
+  }
+}
+
+export const Icons = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+`
+
+export const Icon = styled.div<Props>`
+  font-family: 'Bootstrap-icons';
+  color: rgb(${variables.secondaryText});
+  cursor: pointer;
+
+  &:hover {
+    color: rgb(${(props) => iconColor(props.tipo)});
   }
 `
