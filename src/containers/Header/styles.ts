@@ -8,6 +8,7 @@ export const HeaderStyle = styled.header`
 export const Titulo = styled.h1`
   font-size: 36px;
   margin-bottom: 16px;
+  display: flex;
 `
 
 export const BuscarInput = styled.input`

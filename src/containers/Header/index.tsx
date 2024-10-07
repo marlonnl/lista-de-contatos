@@ -1,10 +1,14 @@
 import Tab from '../../components/Tab'
+import { BootstrapIcon } from '../../styles'
 import { BuscarInput, CampoBusca, HeaderStyle, Tabs, Titulo } from './styles'
 
 const Header = () => (
   <>
     <HeaderStyle>
-      <Titulo>📇 lista de contatos</Titulo>
+      <Titulo>
+        <BootstrapIcon>&#xF676;</BootstrapIcon>
+        lista de contatos
+      </Titulo>
       <CampoBusca>
         <BuscarInput type="text" name="" id="" placeholder="pesquisar" />
         <i className="bi bi-search"></i>

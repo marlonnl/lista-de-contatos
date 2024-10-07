@@ -1,6 +1,5 @@
 import Contact from '../../components/Contact'
-import { ContactListStyle } from './styles'
-import * as categorias from '../../utils/enums/contatos'
+import * as enums from '../../utils/enums/contatos'
 
 const ContactList = () => {
   const defaultContacts = {
@@ -10,14 +9,14 @@ const ContactList = () => {
         nome: 'Cascão',
         email: 'cascao@bol.com.br',
         tel: '123456789',
-        categoria: categorias.Caterogia.AMIGOS
+        categoria: enums.Caterogia.AMIGOS
       },
       {
         id: 1,
         nome: 'Cebolinha',
         email: 'cebola@gmail.com.br',
         tel: '123456789',
-        categoria: categorias.Caterogia.TRABALHO
+        categoria: enums.Caterogia.TRABALHO
       }
     ]
   }
@@ -30,6 +29,8 @@ const ContactList = () => {
             nome={'Cebolinha da Silva Correa'}
             email={'cebola@gmail.com'}
             tel={'124678345'}
+            categoria={enums.Caterogia.AMIGOS}
+            fav={false}
           />
         </li>
         <li>
@@ -37,6 +38,8 @@ const ContactList = () => {
             nome={'Cebolinha da Silva Correa'}
             email={'cebola@gmail.com'}
             tel={'124678345'}
+            categoria={enums.Caterogia.FAMILIA}
+            fav={true}
           />
         </li>
       </ul>

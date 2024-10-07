@@ -7,8 +7,10 @@ export const ContactCard = styled.div`
   border-radius: 8px;
   margin-bottom: 8px;
 
+  box-shadow: 5px 5px 5px rgb(${variables.secondaryText});
+
   &:hover {
-    border: 1px solid gray;
+    box-shadow: 5px 5px 5px 1px rgb(${variables.secondaryText});
   }
 `
 
@@ -39,4 +41,28 @@ export const ContactTelefone = styled.p`
 
   display: flex;
   align-items: center;
+`
+
+export const ContactHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
+export const ContactIcons = styled.div`
+  display: flex;
+  gap: 16px;
+`
+
+export const ContactCategoria = styled.span`
+  font-size: 12px;
+  background-color: rgb(${variables.tabHover});
+  color: #eee;
+  display: flex;
+  align-items: center;
+  padding: 4px 6px;
+  border-radius: 8px;
+
+  &::before {
+    content: '#';
+  }
 `

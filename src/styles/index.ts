@@ -1,6 +1,10 @@
 import styled, { createGlobalStyle } from 'styled-components'
 import variables from './variables'
 
+type Props = {
+  fav: boolean
+}
+
 const GlobalStyle = createGlobalStyle`
     /* css reset */
     * {
@@ -26,6 +30,13 @@ export const FonteNumerica = styled.p`
 export const BootstrapIcon = styled.div`
   font-family: 'Bootstrap-icons';
   margin-right: 8px;
+`
+
+export const Favorito = styled.div<Props>`
+  font-family: 'Bootstrap-icons';
+  color: rgb(
+    ${(props) => (props.fav ? variables.favTrue : variables.favFalse)}
+  );
 `
 
 export default GlobalStyle
