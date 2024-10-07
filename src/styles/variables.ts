@@ -11,5 +11,7 @@ export default {
   tabInativo: '247,247,247',
 
   favTrue: '255,205,60',
-  favFalse: '173,174,177'
+  favFalse: '173,174,177',
+
+  buttonBgColor: '61,92,149'
 }

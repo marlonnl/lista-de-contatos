@@ -8,7 +8,7 @@ type Props = {
 const FilterTab = styled.p<Props>`
   font-size: 14px;
   font-weight: bold;
-  padding: 16px 0 4px;
+  padding: 4px 0;
   margin-right: 24px;
   cursor: pointer;
 

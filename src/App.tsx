@@ -1,17 +1,28 @@
 import React from 'react'
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import Header from './containers/Header'
 
 import GlobalStyle, { Container } from './styles'
-import ContactList from './containers/ContactList'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Home from './pages/Home'
+import Cadastro from './pages/Cadastro'
+
+const rota = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />
+  },
+  {
+    path: '/novo',
+    element: <Cadastro />
+  }
+])
 
 function App() {
   return (
     <>
       <GlobalStyle />
       <Container>
-        <Header />
-        <ContactList></ContactList>
+        <RouterProvider router={rota} />
       </Container>
     </>
   )

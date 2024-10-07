@@ -37,6 +37,14 @@ export const Favorito = styled.div<Props>`
   color: rgb(
     ${(props) => (props.fav ? variables.favTrue : variables.favFalse)}
   );
+  cursor: pointer;
+
+  &:hover {
+    color: rgba(
+      ${(props) => (props.fav ? variables.favTrue : variables.favFalse)},
+      0.8
+    );
+  }
 `
 
 export default GlobalStyle

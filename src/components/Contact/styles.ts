@@ -5,7 +5,7 @@ export const ContactCard = styled.div`
   padding: 16px;
   border: 1px solid transparent;
   border-radius: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 
   box-shadow: 5px 5px 5px rgb(${variables.secondaryText});
 
