@@ -1,3 +1,4 @@
+import { useDispatch } from 'react-redux'
 import { BootstrapIcon, Favorito } from '../../styles'
 import * as enums from '../../utils/enums/contatos'
 import {
@@ -12,6 +13,7 @@ import {
   Icon,
   Icons
 } from './styles'
+import { remove } from '../../store/reducers/contatos'
 
 type Props = {
   nome: string
@@ -19,9 +21,12 @@ type Props = {
   tel: string
   categoria: enums.Caterogia
   fav: boolean
+  id: number
 }
 
-const Contact = ({ nome, email, tel, categoria, fav }: Props) => {
+const Contact = ({ nome, email, tel, categoria, fav, id }: Props) => {
+  const dispatch = useDispatch()
+
   return (
     <ContactCard>
       <ContactInfo>
@@ -53,7 +58,11 @@ const Contact = ({ nome, email, tel, categoria, fav }: Props) => {
           <Icon tipo={'editar'} title={'Editar contato'}>
             &#xF4CA;
           </Icon>
-          <Icon tipo={'deletar'} title={'Deletar contato'}>
+          <Icon
+            tipo={'deletar'}
+            title={'Deletar contato'}
+            onClick={() => dispatch(remove(id))}
+          >
             &#xF5DD;
           </Icon>
           {/* <Icon tipo={'cancelar'} title={'Cancelar edição'}>&#xF622;</Icon>

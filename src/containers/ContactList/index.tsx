@@ -52,6 +52,7 @@ const ContactList = () => {
         {contatoFiltro().map((c) => (
           <li key={c.nome}>
             <Contact
+              id={c.id}
               nome={c.nome}
               email={c.email}
               tel={c.telefone}
