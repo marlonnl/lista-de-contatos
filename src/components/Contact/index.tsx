@@ -43,12 +43,21 @@ const Contact = ({ nome, email, tel, categoria, fav }: Props) => {
       </ContactInfo>
 
       <ContactActions>
-        <Favorito fav={fav}>{fav ? <>&#xF586;</> : <>&#xF588;</>}</Favorito>
+        <Favorito
+          fav={fav}
+          title={fav ? 'Remover dos favoritos' : 'Favoritar contato'}
+        >
+          {fav ? <>&#xF586;</> : <>&#xF588;</>}
+        </Favorito>
         <Icons>
-          <Icon tipo={'editar'}>&#xF4CA;</Icon>
-          <Icon tipo={'deletar'}>&#xF5DD;</Icon>
-          {/* <Icon tipo={'cancelar'}>&#xF622;</Icon>
-          <Icon tipo={'salvar'}>&#xF7D9;</Icon> */}
+          <Icon tipo={'editar'} title={'Editar contato'}>
+            &#xF4CA;
+          </Icon>
+          <Icon tipo={'deletar'} title={'Deletar contato'}>
+            &#xF5DD;
+          </Icon>
+          {/* <Icon tipo={'cancelar'} title={'Cancelar edição'}>&#xF622;</Icon>
+          <Icon tipo={'salvar'} title={'Salvar edição'}>&#xF7D9;</Icon> */}
         </Icons>
       </ContactActions>
     </ContactCard>
