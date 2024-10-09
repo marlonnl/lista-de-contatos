@@ -1,6 +1,7 @@
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import FilterTab from './styles'
 import { alteraFiltro, alteraTermo } from '../../store/reducers/filtro'
+import { RootReducer } from '../../store'
 
 export type Props = {
   fav?: boolean
@@ -10,16 +11,25 @@ export type Props = {
   ativo: boolean
 }
 
-const Tab = ({ label, fav, ativo, criterio }: Props) => {
+const Tab = ({ label, fav, criterio: criterioProp }: Props) => {
   const dispatch = useDispatch()
+  const { filtro } = useSelector((state: RootReducer) => state)
+
+  const filtroAtivo = () => {
+    const criterioIgual = filtro.criterio === criterioProp
+
+    return criterioIgual
+  }
 
   const filtrar = () => {
-    dispatch(alteraFiltro(criterio))
+    dispatch(alteraFiltro(criterioProp))
   }
+
+  const estaAtivo = filtroAtivo()
 
   return (
     <>
-      <FilterTab ativo={ativo} onClick={filtrar}>
+      <FilterTab ativo={estaAtivo} onClick={filtrar}>
         {fav ? (
           <>
             <i className="bi bi-star-fill"></i>
