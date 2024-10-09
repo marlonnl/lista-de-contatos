@@ -13,7 +13,7 @@ import {
   Icon,
   Icons
 } from './styles'
-import { remove } from '../../store/reducers/contatos'
+import { alteraFav, remove } from '../../store/reducers/contatos'
 
 type Props = {
   nome: string
@@ -51,6 +51,7 @@ const Contact = ({ nome, email, tel, categoria, fav, id }: Props) => {
         <Favorito
           fav={fav}
           title={fav ? 'Remover dos favoritos' : 'Favoritar contato'}
+          onClick={() => dispatch(alteraFav(id))}
         >
           {fav ? <>&#xF586;</> : <>&#xF588;</>}
         </Favorito>

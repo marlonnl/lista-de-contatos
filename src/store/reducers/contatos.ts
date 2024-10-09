@@ -51,9 +51,19 @@ const contatoSlice = createSlice({
       state.contatos = [
         ...state.contatos.filter((contato) => contato.id !== action.payload)
       ]
+    },
+    alteraFav: (state, action: PayloadAction<number>) => {
+      const contatoIndex = state.contatos.findIndex(
+        (i) => i.id === action.payload
+      )
+
+      if (contatoIndex >= 0) {
+        const estadoAtual = state.contatos[contatoIndex].fav
+        state.contatos[contatoIndex].fav = !estadoAtual
+      }
     }
   }
 })
 
-export const { remove } = contatoSlice.actions
+export const { remove, alteraFav } = contatoSlice.actions
 export default contatoSlice.reducer
