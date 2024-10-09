@@ -38,6 +38,16 @@ const ContactList = () => {
           contato.nome.toLowerCase().search(termoBusca.toLowerCase()) >= 0
       )
 
+      if (criterio === 'todos') {
+        return contatos
+      } else if (criterio === 'fav') {
+        contatosFiltrados = contatosFiltrados.filter((contato) => contato.fav)
+      } else {
+        contatosFiltrados = contatosFiltrados.filter(
+          (contato) => contato.categoria === criterio
+        )
+      }
+
       return contatosFiltrados
     } else {
       return contatos

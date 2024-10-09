@@ -6,11 +6,13 @@ import AddButton from '../../components/AddButton'
 import { BootstrapIcon } from '../../styles'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
-import { alteraTermo } from '../../store/reducers/filtro'
+import { alteraFiltro, alteraTermo } from '../../store/reducers/filtro'
 
 const TabBar = () => {
   const dispatch = useDispatch()
-  const { termoBusca } = useSelector((state: RootReducer) => state.filtro)
+  const { termoBusca, criterio } = useSelector(
+    (state: RootReducer) => state.filtro
+  )
 
   return (
     <>
@@ -26,11 +28,16 @@ const TabBar = () => {
 
       <TabsContainer>
         <Tabs>
-          <Tab label={'star'} fav={true} ativo={false}></Tab>
-          <Tab label={'todos'} ativo={true}></Tab>
+          <Tab label={'star'} fav={true} ativo={false} criterio="fav"></Tab>
+          <Tab label={'todos'} ativo={true} criterio="todos"></Tab>
 
           {Object.values(enums.Caterogia).map((categoria) => (
-            <Tab key={categoria} label={categoria} ativo={false} />
+            <Tab
+              key={categoria}
+              label={categoria}
+              ativo={false}
+              criterio={categoria}
+            />
           ))}
         </Tabs>
 
