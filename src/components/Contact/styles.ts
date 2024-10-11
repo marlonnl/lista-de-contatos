@@ -49,12 +49,32 @@ export const ContactEmail = styled.p`
   align-items: center;
 `
 
+export const EmailInput = styled.input`
+  font-family: 'Nanum Gothic Coding', system-ui;
+  font-size: 14px;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: rgb(${variables.secondaryText});
+  background-color: transparent;
+`
+
 export const ContactTelefone = styled.p`
   color: rgb(${variables.secondaryText});
   margin-top: 8px;
 
   display: flex;
   align-items: center;
+
+  input {
+    font-family: 'Nanum Gothic Coding', system-ui;
+    font-size: 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: rgb(${variables.secondaryText});
+    background-color: transparent;
+  }
 `
 
 export const ContactHeader = styled.div`

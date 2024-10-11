@@ -45,7 +45,7 @@ const ContactList = () => {
                 id={c.id}
                 nome={c.nome}
                 email={c.email}
-                tel={c.telefone}
+                telefone={c.telefone}
                 categoria={c.categoria}
                 fav={c.fav}
               />

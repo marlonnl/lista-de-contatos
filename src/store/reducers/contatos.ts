@@ -78,9 +78,18 @@ const contatoSlice = createSlice({
         }
         state.contatos = [...state.contatos, novoContato]
       }
+    },
+    edita: (state, action: PayloadAction<Contato>) => {
+      const contatoIndex = state.contatos.findIndex(
+        (i) => i.id === action.payload.id
+      )
+
+      if (action.payload.id >= 0) {
+        state.contatos[contatoIndex] = action.payload
+      }
     }
   }
 })
 
-export const { remove, alteraFav, adiciona } = contatoSlice.actions
+export const { remove, alteraFav, adiciona, edita } = contatoSlice.actions
 export default contatoSlice.reducer
