@@ -2,10 +2,11 @@ import { FormEvent, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
+import { adiciona } from '../../store/reducers/contatos'
+
 import * as enums from '../../utils/enums/contatos'
 import * as LS from './styles'
 import { BootstrapIcon } from '../../styles'
-import { adiciona } from '../../store/reducers/contatos'
 
 const Formulario = () => {
   const dispatch = useDispatch()
