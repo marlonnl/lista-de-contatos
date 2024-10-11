@@ -1,14 +1,22 @@
-import Tab from '../../components/Tab'
 import { BootstrapIcon } from '../../styles'
-import { HeaderStyle, Titulo } from './styles'
+import { HeaderStyle, MenuBar, MenuBarItem, Titulo } from './styles'
 
 const Header = () => (
   <>
     <HeaderStyle>
-      <Titulo>
-        <BootstrapIcon>&#xF676;</BootstrapIcon>
-        lista de contatos
-      </Titulo>
+      <Titulo>lista de contatos</Titulo>
+
+      {/* <MenuBar>
+        <MenuBarItem to={'/'}>
+          <BootstrapIcon>&#xF378;</BootstrapIcon>
+          sobre
+        </MenuBarItem>
+
+        <MenuBarItem to={'/'}>
+          <BootstrapIcon>&#xF504;</BootstrapIcon>
+          ajuda
+        </MenuBarItem>
+      </MenuBar> */}
     </HeaderStyle>
   </>
 )

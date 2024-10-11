@@ -6,7 +6,7 @@ type Props = {
 }
 
 const FilterTab = styled.p<Props>`
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   padding: 4px 0;
   margin-right: 32px;
@@ -25,13 +25,14 @@ export const TooltipTotal = styled.span`
   position: absolute;
   top: 0;
   right: 1;
-  padding: 0 2px;
+  padding: 1px 4px;
   margin-left: 2px;
   background-color: rgb(${variables.tabHover});
   color: #fff;
-  border-radius: 4px;
-  font-size: 10px;
-  font-family: 'Nanum Gothic Coding', system-ui;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: bold;
+  font-family: monospace;
 `
 
 export default FilterTab
