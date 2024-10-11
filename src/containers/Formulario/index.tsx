@@ -82,7 +82,7 @@ const Formulario = () => {
               <input
                 type="radio"
                 name="categoria"
-                value={novaCategoria}
+                value={categoria}
                 id={categoria}
                 defaultChecked={categoria === enums.Caterogia.AMIGOS}
                 onChange={(e) =>
