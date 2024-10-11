@@ -2,28 +2,9 @@ import { useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
 
 import Contact from '../../components/Contact'
-import * as enums from '../../utils/enums/contatos'
+import { ContactSection } from './styles'
 
 const ContactList = () => {
-  const defaultContacts = {
-    contatos: [
-      {
-        id: 1,
-        nome: 'Cascão',
-        email: 'cascao@bol.com.br',
-        tel: '123456789',
-        categoria: enums.Caterogia.AMIGOS
-      },
-      {
-        id: 1,
-        nome: 'Cebolinha',
-        email: 'cebola@gmail.com.br',
-        tel: '123456789',
-        categoria: enums.Caterogia.TRABALHO
-      }
-    ]
-  }
-
   const { contatos } = useSelector((state: RootReducer) => state.contatos)
   const { termoBusca, criterio } = useSelector(
     (state: RootReducer) => state.filtro
@@ -54,24 +35,24 @@ const ContactList = () => {
     }
   }
 
-  const totalContatos = contatoFiltro()
-
   return (
     <>
-      <ul>
-        {contatoFiltro().map((c) => (
-          <li key={c.nome}>
-            <Contact
-              id={c.id}
-              nome={c.nome}
-              email={c.email}
-              tel={c.telefone}
-              categoria={c.categoria}
-              fav={c.fav}
-            />
-          </li>
-        ))}
-      </ul>
+      <ContactSection>
+        <ul>
+          {contatoFiltro().map((c) => (
+            <li key={c.nome}>
+              <Contact
+                id={c.id}
+                nome={c.nome}
+                email={c.email}
+                tel={c.telefone}
+                categoria={c.categoria}
+                fav={c.fav}
+              />
+            </li>
+          ))}
+        </ul>
+      </ContactSection>
     </>
   )
 }
