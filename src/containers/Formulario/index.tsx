@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import * as enums from '../../utils/enums/contatos'
 import * as LS from './styles'
 import { BootstrapIcon } from '../../styles'
+import { adiciona } from '../../store/reducers/contatos'
 
 const Formulario = () => {
   const dispatch = useDispatch()
@@ -19,7 +20,15 @@ const Formulario = () => {
   const adicionarContato = (e: FormEvent) => {
     e.preventDefault()
 
-    // dispatch(adiciona({}))
+    dispatch(
+      adiciona({
+        nome: novoNome,
+        email: novoEmail,
+        telefone: novoTel,
+        categoria: novaCategoria,
+        fav: novoFav
+      })
+    )
     navigate('/')
   }
 

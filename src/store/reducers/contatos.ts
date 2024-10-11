@@ -62,8 +62,22 @@ const contatoSlice = createSlice({
         state.contatos[contatoIndex].fav = !estadoAtual
       }
     },
-    adiciona: (state, action: PayloadAction<Contato>) => {
-      return
+    adiciona: (state, action: PayloadAction<Omit<Contato, 'id'>>) => {
+      const duplicated = state.contatos.find(
+        (contato) =>
+          contato.nome.toLowerCase() === action.payload.nome.toLowerCase()
+      )
+
+      if (duplicated) {
+        alert('Já existe um contato na lista com este mesmo nome.')
+      } else {
+        const lastId = state.contatos[state.contatos.length - 1]
+        const novoContato = {
+          ...action.payload,
+          id: lastId ? lastId.id + 1 : 1
+        }
+        state.contatos = [...state.contatos, novoContato]
+      }
     }
   }
 })
